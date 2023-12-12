@@ -69,6 +69,9 @@ class MainActivity : AppCompatActivity() {
             if (isSelected) prices[sauceNames[index]] ?: 0.0 else 0.0
         }.sum()
 
+
+
+
     }
 }
 
