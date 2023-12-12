@@ -1,5 +1,6 @@
 package com.example.foodcalculator
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -18,24 +19,32 @@ class MainActivity : AppCompatActivity() {
     private lateinit var checkBoxParmesanCheese: CheckBox
     private lateinit var resultTextView: TextView
     private lateinit var calculateButton: Button
+    private lateinit var button: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val launchSecondActivityButton = findViewById<View>(R.id.button)
+        val checkBoxBuffalo = findViewById<CheckBox>(R.id.checkBox)
+        val checkBoxSweetChili = findViewById<CheckBox>(R.id.checkBox2)
+        val checkBoxTeriyaki = findViewById<CheckBox>(R.id.checkBox3)
+        val checkBoxHoneyMustard = findViewById<CheckBox>(R.id.checkBox4)
+        val checkBoxHotSauce = findViewById<CheckBox>(R.id.checkBox5)
+        val checkBoxParmesanCheese = findViewById<CheckBox>(R.id.checkBox6)
 
         // Find the checkbox views
-        checkBoxBuffalo = findViewById(R.id.checkBox)
-        checkBoxSweetChili = findViewById(R.id.checkBox2)
-        checkBoxTeriyaki = findViewById(R.id.checkBox3)
-        checkBoxHoneyMustard = findViewById(R.id.checkBox4)
-        checkBoxHotSauce = findViewById(R.id.checkBox5)
-        checkBoxParmesanCheese = findViewById(R.id.checkBox6)
+
+
+
 
         // Find the TextView to display the result
         resultTextView = findViewById(R.id.resultTextView)
 
         calculateButton = findViewById(R.id.calculateButton)
         // Set a click listener on the button
+        val intent = Intent(this, SecondActivity::class.java)
+        val dataToSend = ArrayList<String>()
+
         calculateButton.setOnClickListener {
             // Calculate the total cost of selected sauces
             val totalCost = calculateTotalCost(
@@ -50,7 +59,12 @@ class MainActivity : AppCompatActivity() {
             // Display the total cost in the TextView
             val formattedTotalCost = NumberFormat.getCurrencyInstance().format(totalCost)
             resultTextView.text = "Total Cost: $formattedTotalCost"
+
+            intent.putStringArrayListExtra("key",dataToSend)
+            startActivity(intent)
+
         }
+
     }
 
     private fun calculateTotalCost(vararg sauces: Boolean): Double {
@@ -68,8 +82,6 @@ class MainActivity : AppCompatActivity() {
         return sauces.mapIndexed { index, isSelected ->
             if (isSelected) prices[sauceNames[index]] ?: 0.0 else 0.0
         }.sum()
-
-
 
 
     }
