@@ -21,9 +21,9 @@
 
     <CheckBox
         android:id="@+id/checkBox5"
-        android:layout_width="99dp"
-        android:layout_height="44dp"
-        android:text="Honey"
+        android:layout_width="115dp"
+        android:layout_height="46dp"
+        android:text="Hot Sauce"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
@@ -83,7 +83,7 @@
         android:id="@+id/checkBox"
         android:layout_width="90dp"
         android:layout_height="55dp"
-        android:text="Buffalo"
+        android:text="@string/buffalo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.077"
@@ -133,7 +133,8 @@
         android:layout_height="154dp"
         app:srcCompat="@drawable/chteri"
         tools:layout_editor_absoluteX="263dp"
-        tools:layout_editor_absoluteY="60dp" />
+        tools:layout_editor_absoluteY="60dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView2"
@@ -160,18 +161,6 @@
         app:srcCompat="@drawable/mustard" />
 
     <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="107dp"
-        android:layout_height="103dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57"
-        app:srcCompat="@drawable/Hny" />
-
-    <ImageView
         android:id="@+id/imageView12"
         android:layout_width="100dp"
         android:layout_height="150dp"
@@ -182,5 +171,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.581"
         app:srcCompat="@drawable/cheesedip" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="131dp"
+        android:layout_height="155dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.588"
+        app:srcCompat="@drawable/hot_sauce" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
